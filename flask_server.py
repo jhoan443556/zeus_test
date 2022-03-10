@@ -1,8 +1,13 @@
-print('hello world')
-print('my name is gatin, please, call me')
-print('im batman')
-print('hola')
-print('asss')
-print('asdade')
-print('gatin')
-print('perrin')
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/test')
+def index():
+    return 'hola mundo'
+
+@app.route('/')
+def home():
+    return render_template('layout.html')
+
+app.run(debug = True, port=5000)
